@@ -1,8 +1,10 @@
-package id.my.nurhamidan.epil;
+package id.my.nurhamidan.epil.views;
+
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+import id.my.nurhamidan.epil.R;
 
 public class MainActivity extends AppCompatActivity {
 

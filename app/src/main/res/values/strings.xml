@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Epil</string>
+    <string name="username">Nama Pengguna</string>
+    <string name="password">Kata Sandi</string>
+    <string name="sign_in">Masuk</string>
+    <string name="sign_up">Daftar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
