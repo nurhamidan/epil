@@ -1,9 +1,14 @@
 <resources>
     <string name="app_name">Epil</string>
-    <string name="username">Nama Pengguna</string>
-    <string name="password">Kata Sandi</string>
-    <string name="sign_in">Masuk</string>
-    <string name="sign_up">Daftar</string>
+    <string name="text_username">Nama Pengguna</string>
+    <string name="text_password">Kata Sandi</string>
+    <string name="button_login">Masuk</string>
+    <string name="button_register">Daftar</string>
+    <string name="text_name">Nama</string>
+    <string name="text_email">Email</string>
+    <string name="text_full_name">Nama Lengkap</string>
+    <string name="text_repeat_password">Ulangi Kata Sandi</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

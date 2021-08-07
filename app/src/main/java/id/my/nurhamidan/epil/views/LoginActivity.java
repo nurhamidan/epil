@@ -3,49 +3,37 @@ package id.my.nurhamidan.epil.views;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
-
-import id.my.nurhamidan.epil.R;
-import id.my.nurhamidan.epil.models.User;
-import id.my.nurhamidan.epil.viewmodels.UserViewModel;
+import id.my.nurhamidan.epil.databinding.ActivityLoginBinding;
+import id.my.nurhamidan.epil.models.LoginUser;
+import id.my.nurhamidan.epil.viewmodels.LoginViewModel;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
-
-    private UserViewModel userViewModel;
-    private EditText usernameEditText;
-    private EditText passwordEditText;
-    private Button signinButton;
-    private Button signupButton;
+    private ActivityLoginBinding binding;
+    private LoginViewModel loginViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
-        usernameEditText = findViewById(R.id.username_edit_text);
-        passwordEditText = findViewById(R.id.password_edit_text);
-        signinButton = findViewById(R.id.sign_in_button);
-        signupButton = findViewById(R.id.sign_up_button);
-
-        userViewModel = ViewModelProviders.of(this).get(UserViewModel.class);
-        userViewModel.getResponseLiveData().observe(this, new Observer<Response<User>>() {
+        loginViewModel = ViewModelProviders.of(this).get(LoginViewModel.class);
+        loginViewModel.getResponseLiveData().observe(this, new Observer<Response<LoginUser>>() {
             @Override
-            public void onChanged(Response<User> userResponse) {
-                if (userResponse != null) {
-                    if (userResponse.code() == 201) {
+            public void onChanged(Response<LoginUser> loginUserResponse) {
+                if (loginUserResponse != null) {
+                    if (loginUserResponse.code() == 200) {
                         Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                        intent.putExtra("user", userResponse.body());
+                        intent.putExtra("user", loginUserResponse.body());
                         startActivity(intent);
                     } else {
-                        Toast.makeText(getApplicationContext(), "Login gagal.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Login gagal. " + loginUserResponse.code(), Toast.LENGTH_LONG).show();
                     }
                 } else {
                     Toast.makeText(getApplicationContext(), "Tidak terhubung ke jaringan.", Toast.LENGTH_LONG).show();
@@ -53,18 +41,18 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        signinButton.setOnClickListener(new View.OnClickListener() {
+        binding.buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = usernameEditText.getEditableText().toString();
-                String password = passwordEditText.getEditableText().toString();
+                String username = binding.textUsername.getText().toString();
+                String password = binding.textPassword.getText().toString();
 
-                userViewModel.login(username, password);
+                loginViewModel.create(username, password);
 
             }
         });
 
-        signupButton.setOnClickListener(new View.OnClickListener() {
+        binding.buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), RegisterUserFormActivity.class);

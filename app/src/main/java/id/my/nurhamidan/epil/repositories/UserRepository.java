@@ -22,7 +22,6 @@ public class UserRepository {
 
     private MutableLiveData<Response<User>> responseMutableLiveData;
     private MutableLiveData<Response<ResponseBody>> responseBodyResponseMutableLiveData;
-    private LoginService loginService;
     private UserService userService;
 
     public UserRepository() {
@@ -32,36 +31,12 @@ public class UserRepository {
         interceptor.level(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
-        loginService = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .client(client)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(LoginService.class);
-
         userService = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(UserService.class);
-    }
-
-    public void login(String username, String password) {
-        loginService.login(username, password)
-                .enqueue(new Callback<User>() {
-                    @Override
-                    public void onResponse(Call<User> call, Response<User> response) {
-                        responseMutableLiveData.postValue(response);
-                        //System.out.println("println " + response.code());
-                    }
-
-                    @Override
-                    public void onFailure(Call<User> call, Throwable t) {
-                        responseMutableLiveData.postValue(null);
-                        //System.out.println("println " + "gagal");
-                    }
-                });
     }
 
     public void create(String nama, String email, String username, String password) {

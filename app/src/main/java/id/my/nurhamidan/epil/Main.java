@@ -1,14 +1,16 @@
-package id.my.nurhamidan.epil.views;
+package id.my.nurhamidan.epil;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.activity.ComponentActivity;
 import androidx.appcompat.app.AppCompatActivity;
 
-import id.my.nurhamidan.epil.R;
+import id.my.nurhamidan.epil.views.LoginActivity;
 
-public class MainActivity extends AppCompatActivity {
 
+public class Main extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

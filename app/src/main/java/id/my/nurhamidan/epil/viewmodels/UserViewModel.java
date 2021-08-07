@@ -23,10 +23,6 @@ public class UserViewModel extends AndroidViewModel {
         responsBodyResponseLiveData = userRepository.getResponseBodyResponseMutableLiveData();
     }
 
-    public void login(String username, String password) {
-        userRepository.login(username, password);
-    }
-
     public void create(String nama, String email, String username, String password) {
         userRepository.create(nama, email, username, password);
     }

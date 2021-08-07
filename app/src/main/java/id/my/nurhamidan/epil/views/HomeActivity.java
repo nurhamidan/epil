@@ -9,10 +9,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import id.my.nurhamidan.epil.R;
+import id.my.nurhamidan.epil.models.LoginUser;
 import id.my.nurhamidan.epil.models.User;
 
 public class HomeActivity extends AppCompatActivity {
-    private User user;
+    private LoginUser user;
     private TextView name;
     private TextView email;
     private TextView username;
@@ -24,7 +25,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Intent intent = getIntent();
-        user = (User) intent.getSerializableExtra("user");
+        user = (LoginUser) intent.getSerializableExtra("user");
 
         name = findViewById(R.id.activity_home_text_view_name);
         email = findViewById(R.id.activity_home_text_view_email);

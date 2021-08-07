@@ -3,11 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mynavgraph"
-    app:startDestination="@id/bookSearchFragment">
+    app:startDestination="@id/login_fragment">
 
     <fragment
         android:id="@+id/bookSearchFragment"
         android:name="id.my.nurhamidan.epil.views.BookSearchFragment"
         android:label="fragment_booksearch"
         tools:layout="@layout/fragment_booksearch" />
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="id.my.nurhamidan.epil.views.fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+    </fragment>
+    <fragment
+        android:id="@+id/blank_fragment"
+        android:name="id.my.nurhamidan.epil.views.fragments.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank"/>
 </navigation>
