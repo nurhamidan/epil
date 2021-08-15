@@ -10,11 +10,14 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.Epil">
-        <activity android:name=".views.RegisterActivity"></activity>
+        <activity android:name=".views.AddCandidateActivity"></activity>
+        <activity android:name=".views.EditProfileActivity" />
+        <activity android:name=".views.VotingActivity" />
+        <activity android:name=".views.VotingsActivity" />
+        <activity android:name=".views.RegisterActivity" />
         <activity android:name=".views.ExampleActivity" />
         <activity android:name=".views.LoginActivity" /> <!-- <activity android:name=".views.MainActivity2"></activity> -->
-        <activity android:name=".views.RegisterUserFormActivity" />
-        <activity android:name=".views.CreatePollFormActivity" />
+        <activity android:name=".views.NewVotingActivity" />
         <activity android:name=".views.HomeActivity" /> <!-- <activity android:name=".views.LoginActivity"></activity> -->
         <activity
             android:name=".Main"

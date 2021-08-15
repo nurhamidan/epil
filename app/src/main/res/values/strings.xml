@@ -4,10 +4,20 @@
     <string name="text_password">Kata Sandi</string>
     <string name="button_login">Masuk</string>
     <string name="button_register">Daftar</string>
+    <string name="button_new_voting">Buat</string>
+    <string name="button_show_voting">Masuk</string>
+    <string name="button_vote_candidate">Pilih</string>
+    <string name="button_save_changes">Simpan Perubahan</string>
+    <string name="button_add_candidate">Tambah Kandidat</string>
+    <string name="button_save_candidate">Tambah</string>
+    <string name="button_delete_candidate">Hapus</string>
     <string name="text_name">Nama</string>
     <string name="text_email">Email</string>
     <string name="text_full_name">Nama Lengkap</string>
+    <string name="text_candidate_name">Nama Kandidat</string>
     <string name="text_repeat_password">Ulangi Kata Sandi</string>
+    <string name="text_voting_name">Masukkan Nama Pemilihan</string>
+    <string name="text_view_voting_name">Nama Pemilihan</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

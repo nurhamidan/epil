@@ -14,7 +14,7 @@
         android:hint="@string/text_full_name"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/text_nama"
+            android:id="@+id/nameTextInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
@@ -26,7 +26,7 @@
         android:hint="@string/text_email"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/text_email"
+            android:id="@+id/emailTextInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
@@ -39,7 +39,7 @@
         android:hint="@string/text_username"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/text_username"
+            android:id="@+id/usernameTextInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
@@ -48,10 +48,11 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:endIconMode="password_toggle"
         android:hint="@string/text_password"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/text_password"
+            android:id="@+id/passwordTextInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -59,12 +60,14 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordRepeatTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:endIconMode="password_toggle"
         android:hint="@string/text_repeat_password"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/text_repeat_password"
+            android:id="@+id/repeatPasswordTextInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -72,7 +75,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_register"
+        android:id="@+id/registerMaterialButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_register"

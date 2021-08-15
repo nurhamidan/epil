@@ -8,24 +8,25 @@ import androidx.lifecycle.LiveData;
 
 import id.my.nurhamidan.epil.models.LoginUser;
 import id.my.nurhamidan.epil.models.User;
-import id.my.nurhamidan.epil.repositories.LoginRepository;
+import id.my.nurhamidan.epil.repositories.LoginUserRepository;
+import id.my.nurhamidan.epil.repositories.Repository;
 import id.my.nurhamidan.epil.repositories.UserRepository;
 import retrofit2.Response;
 
 public class LoginViewModel extends AndroidViewModel {
-    private LoginRepository loginRepository;
-    private LiveData<Response<LoginUser>> responseLiveData;
+    private UserRepository userRepository;
+    private LiveData<Response> responseLiveData;
     public LoginViewModel(@NonNull Application application) {
         super(application);
-        loginRepository = new LoginRepository();
-        responseLiveData = loginRepository.getResponseMutableLiveData();
+        userRepository = new UserRepository();
+        responseLiveData = userRepository.getResponseMutableLiveData();
     }
 
-    public LiveData<Response<LoginUser>> getResponseLiveData() {
+    public LiveData<Response> getResponseLiveData() {
         return responseLiveData;
     }
 
-    public void create(String username, String password) {
-        loginRepository.create(username, password);
+    public void login(String username, String password) {
+        userRepository.login(username, password);
     }
 }

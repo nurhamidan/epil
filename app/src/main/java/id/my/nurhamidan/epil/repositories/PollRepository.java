@@ -1,13 +1,8 @@
 package id.my.nurhamidan.epil.repositories;
 
-import android.widget.Toast;
-
 import androidx.lifecycle.MutableLiveData;
 
-import id.my.nurhamidan.epil.apis.LoginService;
 import id.my.nurhamidan.epil.apis.PollService;
-import id.my.nurhamidan.epil.models.Poll;
-import id.my.nurhamidan.epil.models.User;
 import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
 import okhttp3.logging.HttpLoggingInterceptor;

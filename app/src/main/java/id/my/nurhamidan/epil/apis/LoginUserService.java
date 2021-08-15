@@ -7,8 +7,8 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
-public interface LoginService {
+public interface LoginUserService {
     @FormUrlEncoded
     @POST("/login")
-    Call<LoginUser> create(@Field("nama_pengguna") String username, @Field("kata_sandi") String password);
+    Call<User> login(@Field("nama_pengguna") String username, @Field("kata_sandi") String password);
 }

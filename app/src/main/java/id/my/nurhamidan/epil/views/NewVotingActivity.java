@@ -1,5 +1,6 @@
 package id.my.nurhamidan.epil.views;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -12,36 +13,43 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import id.my.nurhamidan.epil.R;
-import id.my.nurhamidan.epil.models.Poll;
+import id.my.nurhamidan.epil.databinding.ActivityLoginBinding;
+import id.my.nurhamidan.epil.databinding.ActivityNewVotingBinding;
 import id.my.nurhamidan.epil.models.User;
 import id.my.nurhamidan.epil.viewmodels.PollViewModel;
+import id.my.nurhamidan.epil.viewmodels.VotingViewModel;
 import okhttp3.ResponseBody;
 import retrofit2.Response;
 
-public class CreatePollFormActivity extends AppCompatActivity {
-
-    private EditText pollName;
-    private Button createButton;
-    private PollViewModel pollViewModel;
+public class NewVotingActivity extends AppCompatActivity {
+    private ActivityNewVotingBinding binding;
+    private VotingViewModel viewModel;
     private User user;
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return super.onSupportNavigateUp();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_poll_form);
+        binding = ActivityNewVotingBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
         user = (User) intent.getSerializableExtra("user");
 
-        pollName = findViewById(R.id.activity_create_poll_form_poll_name);
-        createButton = findViewById(R.id.activity_create_poll_form_button_create);
-
-        pollViewModel = ViewModelProviders.of(this).get(PollViewModel.class);
-        pollViewModel.getResponseLiveData().observe(this, new Observer<Response<ResponseBody>>() {
+        viewModel = ViewModelProviders.of(this).get(VotingViewModel.class);
+        viewModel.getResponseLiveData().observe(this, new Observer<Response>() {
             @Override
-            public void onChanged(Response<ResponseBody> responseBodyResponse) {
-                if (responseBodyResponse != null) {
-                    if (responseBodyResponse.code() == 201) {
+            public void onChanged(Response response) {
+                if (response != null) {
+                    if (response.code() == 201) {
                         Toast.makeText(getApplicationContext(), "Berhasil dibuat.", Toast.LENGTH_LONG).show();
                         finish();
                     } else {
@@ -53,12 +61,12 @@ public class CreatePollFormActivity extends AppCompatActivity {
             }
         });
 
-        createButton.setOnClickListener(new View.OnClickListener() {
+        binding.newVotingMaterialButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = pollName.getEditableText().toString();
+                String name = binding.votingNameTextInputEditText.getText().toString();
                 Integer userId = user.getId();
-                pollViewModel.create(name, userId);
+                viewModel.create(name, userId);
             }
         });
     }

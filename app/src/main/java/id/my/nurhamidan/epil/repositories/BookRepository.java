@@ -1,14 +1,10 @@
 package id.my.nurhamidan.epil.repositories;
 
-import android.util.Log;
-import android.widget.Toast;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import id.my.nurhamidan.epil.apis.BookSearchService;
 import id.my.nurhamidan.epil.models.VolumesResponse;
-import id.my.nurhamidan.epil.views.MainActivity;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;

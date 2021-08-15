@@ -4,13 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.MainActivity2">
-
-    <fragment
-        android:id="@+id/activity_main"
-        android:name="id.my.nurhamidan.epil.views.fragments.LoginFragment"
+    android:paddingHorizontal="@dimen/padding_horizontal_application"
+    tools:context=".views.VotingsActivity">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/votingsRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:navGraph="@navigation/mynavgraph" />
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

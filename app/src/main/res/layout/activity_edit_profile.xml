@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingHorizontal="@dimen/padding_horizontal_application"
-    tools:context=".views.LoginActivity">
+    tools:context=".views.EditProfileActivity">
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/text_username"
+        android:hint="@string/text_full_name"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/usernameTextInputEditText"
+            android:id="@+id/nameTextInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
@@ -23,27 +22,20 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/text_password"
+        android:hint="@string/text_email"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/passwordTextInputEditText"
+            android:id="@+id/emailTextInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
+            android:inputType="textEmailAddress"
             />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/loginMaterialButton"
+        android:id="@+id/saveChangesMaterialButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_login"
-        />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/registerMaterialButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/button_register"
+        android:text="@string/button_save_changes"
         />
 </LinearLayout>
