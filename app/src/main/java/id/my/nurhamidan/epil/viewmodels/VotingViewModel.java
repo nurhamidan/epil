@@ -28,4 +28,8 @@ public class VotingViewModel extends ViewModel {
     public void getVotings() {
         repository.getVotings();
     }
+
+    public void deleteVoting(Integer votingId) {
+        repository.delete(votingId);
+    }
 }

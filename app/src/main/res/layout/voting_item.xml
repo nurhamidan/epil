@@ -18,4 +18,12 @@
         android:text="@string/button_show_voting"
         />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/deleteVotingMaterialButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="@string/button_delete_voting"
+        />
+
 </LinearLayout>

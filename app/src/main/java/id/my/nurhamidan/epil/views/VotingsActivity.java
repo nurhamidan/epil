@@ -39,7 +39,9 @@ public class VotingsActivity extends AppCompatActivity {
                 if (response != null) {
                     if (response.code() == 200) {
                         binding.votingsRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                        binding.votingsRecyclerView.setAdapter(new VotingsAdapter((ArrayList<Voting>) response.body()));
+                        binding.votingsRecyclerView.setAdapter(new VotingsAdapter(VotingsActivity.this, (ArrayList<Voting>) response.body()));
+                    } else if (response.code() == 204) {
+                        Toast.makeText(getApplicationContext(), "Berhasil Menghapus.", Toast.LENGTH_LONG).show();
                     } else {
                         Toast.makeText(getApplicationContext(), "Gagal Mendapatkan Data " + response.code(), Toast.LENGTH_LONG).show();
                     }

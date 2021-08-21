@@ -11,6 +11,7 @@
     <string name="button_add_candidate">Tambah Kandidat</string>
     <string name="button_save_candidate">Tambah</string>
     <string name="button_delete_candidate">Hapus</string>
+    <string name="button_delete_voting">Hapus</string>
     <string name="text_name">Nama</string>
     <string name="text_email">Email</string>
     <string name="text_full_name">Nama Lengkap</string>

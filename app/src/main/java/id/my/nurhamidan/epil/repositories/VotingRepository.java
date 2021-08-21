@@ -59,4 +59,19 @@ public class VotingRepository extends Repository {
                     }
                 });
     }
+
+    public void delete(Integer id) {
+        service.delete(id)
+                .enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        responseMutableLiveData.postValue(response);
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        responseMutableLiveData.postValue(null);
+                    }
+                });
+    }
 }
